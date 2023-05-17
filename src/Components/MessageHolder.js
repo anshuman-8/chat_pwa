@@ -10,7 +10,7 @@ export default function MessageHolder() {
           alt=""
         />
       </div>
-      <div className="max-w-xs p-2 border shadow-lg rounded-b-xl rounded-e-2xl font-light text-gray-600 bg-white">
+      <div className="max-w-xs p-2 shadow-lg rounded-b-xl rounded-e-2xl font-light text-gray-500 bg-white">
         Connect with fellow travelers, share the ride and save money Connect
         with fellow travelers, share the ride and save money
       </div>

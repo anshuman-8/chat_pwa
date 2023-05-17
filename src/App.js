@@ -4,10 +4,9 @@ import Container from "./Container";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App h-screen">
       <header className="App-header"></header>
-      <main className="max-w-md border border-slate-800 mx-auto bg-[#FAF9F4] h-screen">
-        <h1>React App</h1>
+      <main className="max-w-md mx-auto border-x bg-[#FAF9F4] h-screen">
         <Container
           children={
             <>

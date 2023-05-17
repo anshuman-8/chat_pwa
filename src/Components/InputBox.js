@@ -11,7 +11,7 @@ import { ImAttachment } from "react-icons/im";
 
 export default function InputBox() {
   return (
-    <div className="mx-4 my-2">
+    <div className="mx-4 ">
       <InputGroup size="md">
         <Input
           h="42px"
