@@ -1,12 +1,11 @@
 import React from 'react';
 import MessageHolder from './MessageHolder';
 import SelfMessage from './SelfMessage';
-import InputHolder from './InputHolder';
 
-export default function MainThread() {
+export default function MainThread({chats}) {
   return (
     <div className=''>   
-        <MessageHolder/>
+        {/* <MessageHolder/>
         <SelfMessage/>
         <MessageHolder/>
         <MessageHolder/>
@@ -16,11 +15,17 @@ export default function MainThread() {
         <MessageHolder/>
         <MessageHolder/>
         <SelfMessage/>
-        <MessageHolder/>
-        <MessageHolder/>
-        <div>
-        <InputHolder /> 
-        </div>
+        <MessageHolder/> */}
+        {
+          chats.map((chat, index) => {
+            return (
+              <div key={index}>
+                {chat.sender.self?<SelfMessage chat={chat}/>:<MessageHolder chat={chat}/>}
+              </div>
+            )
+          }
+          )
+        }
     </div>
   )
 }

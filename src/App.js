@@ -8,11 +8,11 @@ function App() {
       <header className="App-header"></header>
       <main className="max-w-md mx-auto border-x bg-[#FAF9F4] h-screen">
         <Container
-          children={
-            <>
-              <MainThread />
-            </>
-          }
+          // children={
+          //   <>
+          //     <MainThread />
+          //   </>
+          // }
         />
       </main>
     </div>
