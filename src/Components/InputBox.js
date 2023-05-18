@@ -19,7 +19,8 @@ export default function InputBox() {
           border={"1px solid transparent"}
           focusBorderColor="#008000"
           bgColor={"#FFFFFF"}
-          placeholder="Message Anshuman"
+          placeholder="Message @Anshuman"
+          onChange={() => null}
         />
         <InputRightElement width="5.5rem" className="">
           <IconButton

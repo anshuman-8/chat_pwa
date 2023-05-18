@@ -5,17 +5,6 @@ import SelfMessage from './SelfMessage';
 export default function MainThread({chats}) {
   return (
     <div className=''>   
-        {/* <MessageHolder/>
-        <SelfMessage/>
-        <MessageHolder/>
-        <MessageHolder/>
-        <MessageHolder/>
-        <SelfMessage/>
-        <MessageHolder/>
-        <MessageHolder/>
-        <MessageHolder/>
-        <SelfMessage/>
-        <MessageHolder/> */}
         {
           chats.map((chat, index) => {
             return (

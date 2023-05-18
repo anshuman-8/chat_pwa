@@ -6,7 +6,7 @@ function App() {
     <div className="App h-screen">
       <header className="App-header"></header>
       <main className="max-w-md mx-auto border-x bg-[#FAF9F4] h-fit">
-        <Container/>
+        <Container />
       </main>
     </div>
   );

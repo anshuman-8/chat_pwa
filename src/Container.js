@@ -9,6 +9,11 @@ export default function Container() {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(0);
   const sentinelRef = useRef(null);
+  const [header, setHeader] = useState({
+    name: "",
+    from: "",
+    to: "",
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
@@ -31,11 +36,15 @@ export default function Container() {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        `https://3.111.128.67/assignment/chat?page=${page}`
-      );
+      const response = await fetch(`/assignment/chat?page=${page}`);
       const data = await response?.json();
-
+      if (page === 0) {
+        setHeader({
+          name: data.name,
+          from: data.from,
+          to: data.to,
+        });
+      }
       setChats((prevChats) => [...prevChats, ...data.chats]);
       setLoading(false);
       console.log(chats);
@@ -60,7 +69,7 @@ export default function Container() {
 
   return (
     <div className="relative">
-      <Header />
+      <Header header={header} />
       {/* {loading && (
         <motion.div
           animate={{ x: 100 }}
