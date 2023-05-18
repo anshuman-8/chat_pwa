@@ -17,8 +17,8 @@ export default function Container() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
-      root: null, // observe elements relative to the viewport
-      threshold: 0.1, // set the threshold as per your needs
+      root: null,
+      threshold: 0.1,
     });
 
     if (sentinelRef.current) {
@@ -36,7 +36,7 @@ export default function Container() {
     setLoading(true);
 
     try {
-      const response = await fetch(`/assignment/chat?page=${page}`);
+      const response = await fetch(`http://3.111.128.67/assignment/chat?page=${page}`);
       const data = await response?.json();
       if (page === 0) {
         setHeader({
