@@ -3,7 +3,6 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  Button,
   IconButton,
 } from "@chakra-ui/react";
 import { AiOutlineSend } from "react-icons/ai";
@@ -14,7 +13,7 @@ export default function InputBox() {
     <div className="mx-4 ">
       <InputGroup size="md">
         <Input
-          h="42px"
+          h="46px"
           type={"text"}
           fontSize={"sm"}
           border={"1px solid transparent"}

@@ -2,13 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import InputHolder from "./Components/InputHolder";
 import Header from "./Components/Header";
 import MainThread from "./Components/MainThread";
+import { motion } from "framer-motion";
 
 export default function Container() {
   const [chats, setChats] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(0);
   const sentinelRef = useRef(null);
-
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
@@ -31,14 +31,16 @@ export default function Container() {
     setLoading(true);
 
     try {
-      const response = await fetch(`https://3.111.128.67/assignment/chat?page=${page}`);
+      const response = await fetch(
+        `https://3.111.128.67/assignment/chat?page=${page}`
+      );
       const data = await response?.json();
 
-      setChats(prevChats => [...prevChats, ...data.chats]);
+      setChats((prevChats) => [...prevChats, ...data.chats]);
       setLoading(false);
       console.log(chats);
     } catch (error) {
-      console.error('Error fetching chats:', error);
+      console.error("Error fetching chats:", error);
       setLoading(false);
     }
   };
@@ -48,19 +50,28 @@ export default function Container() {
     console.log(page);
   }, [page]);
 
-  const handleIntersection = entries => {
+  const handleIntersection = (entries) => {
     const target = entries[0];
 
     if (target.isIntersecting && !loading) {
-      setPage(prevPage => prevPage + 1);
+      setPage((prevPage) => prevPage + 1);
     }
   };
 
   return (
     <div className="relative">
       <Header />
+      {/* {loading && (
+        <motion.div
+          animate={{ x: 100 }}
+          transition={{ ease: "easeOut", duration: 10 }}
+          className="fixed bottom-28 right-1/2 rounded-xl bg-green-600/60 backdrop-blur-sm font-semibold py-2 px-3 text-white w-fit mx-auto shadow-lg"
+        >
+          <p>Loading...</p>
+        </motion.div>
+      )} */}
       <div className="z-0 overflow-y-scroll">
-      <MainThread chats={chats}/>
+        <MainThread chats={chats} />
       </div>
       <div ref={sentinelRef} />
       <InputHolder />

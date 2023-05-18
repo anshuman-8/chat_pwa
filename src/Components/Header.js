@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <div className="border-b border-gray-300 shadow-sm z-20 sticky top-0 bg-[#FAF9F4] w-full">
       <div className="flex flex-row justify-between items-center">
-        <div className="flex flex-row items-center space-x-5 mx-5 my-3">
+        <div className="flex flex-row items-center space-x-5 mx-5 my-5">
           <IoArrowBack size={24} />
           <h2 className="text-2xl font-semibold">Trip 2</h2>
         </div>
@@ -16,7 +16,7 @@ export default function Header() {
         </div>
       </div>
       <div className="flex flex-row justify-between items-center">
-        <div className="flex flex-row items-center space-x-5 mx-5 my-3">
+        <div className="flex flex-row items-center space-x-5 mx-5 mb-3">
           <img
             src="https://fastly.picsum.photos/id/648/160/160.jpg?hmac=AqrvRqv79fFWHWjjjm_Cn7QPPJ2JVox_CLRgzISsO4o"
             className="max-w-[55px] rounded-full"
