@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import InputHolder from "./Components/InputHolder";
 import Header from "./Components/Header";
 import MainThread from "./Components/MainThread";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 export default function Container() {
   const [chats, setChats] = useState([]);
@@ -36,7 +36,9 @@ export default function Container() {
     setLoading(true);
 
     try {
-      const response = await fetch(`http://3.111.128.67/assignment/chat?page=${page}`);
+      const response = await fetch(
+        `http://3.111.128.67/assignment/chat?page=${page}`
+      );
       const data = await response?.json();
       if (page === 0) {
         setHeader({
